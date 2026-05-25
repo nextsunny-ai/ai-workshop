@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ch 29 · 띠링띠링 — API가 이렇게 비쌌다 — 한 명의 대표가 12명의 AI 에이전트를 만들기까지</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="../assets/book.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <div class="topbar__brand"><strong>한 명의 대표가 12명의 AI 에이전트를 만들기까지</strong> · 견본</div>
+    <nav class="topbar__nav">
+      <a href="../">전체 학습</a>
+      <a href="../vibe-coding/">바이브 코딩 강의</a>
+      <a href="./">목차</a>
+    </nav>
+  </div>
+</header>
+
+<article class="reader">
+  <div class="reader__crumb"><span class="dot"></span>Part 9 · Chapter 29</div>
+  <h1 class="reader__title">띠링띠링 — API가 이렇게 비쌌다</h1>
+  <p class="reader__lede">에이전트 시스템 외부 공유 → 해외결제 청구서 폭주 → 그날 다 중단. 일인기업이 가장 자주 마주치는 사고 = 한 번 폭주 = 회사 망함.</p>
+
+  <hr/>
+
+  <h2>진짜 일어난 일</h2>
+  <blockquote>
+    <p>"완전히 에이전트들 시스템 만들어서 아는 사람한테 뿌렸는데 = 해외결제가 된다고 = 띠링띠링 청구서가 날아오기 시작한 거야. ㅋㅋ 난 API가 그렇게 비싼 줄 몰랐지. 말 몇 마디. 특히 시나리오는 = 기니가 장난이 아닌 거야 ㅋㅋ. 그래서 에이전트를 = 괜히 만들었다 싶어서 = 그날 다 중단도 했었어."</p>
+    <p>— 대표 본인 발언</p>
+  </blockquote>
+
+  <h2>에이전트 시스템 = 공유</h2>
+  <p>12명 페르소나 + Oracle 서버 + 텔레그램 봇 = 완성. 신나서 = 아는 사람들한테 = 공유. "우리 시스템 = 한번 써봐. URL 알려줄게."</p>
+  <p>대표 = API key = 자기 거 박혀 있음. 공유 = 외부 사용자가 = 대표 키로 = LLM 호출.</p>
+
+  <h2>청구서 폭주</h2>
+  <p>다음 날 = 폰 알림:</p>
+  <ul>
+    <li>띠링 = "Anthropic 결제 $20"</li>
+    <li>띠링 = "Anthropic 결제 $35"</li>
+    <li>띠링 = "Anthropic 결제 $50"</li>
+    <li>...</li>
+  </ul>
+  <p>= <strong>하루 = $200+</strong>.</p>
+  <p>특히 = <strong>시나리오 호출</strong> = 길이 폭주.</p>
+  <ul>
+    <li>한 시나리오 = 5,000자 + 컨텍스트 8,000자 = 13,000 토큰 입력</li>
+    <li>응답 = 8,000자 = 약 4,000 토큰 출력</li>
+    <li>단가 = Claude Sonnet = 입력 $3/1M + 출력 $15/1M</li>
+    <li>1회 = 약 $0.10</li>
+    <li>외부 사용자 = 시나리오 50개 시도 = $5</li>
+    <li>10명 시도 = $50/일 = $1500/월</li>
+  </ul>
+  <p>= <strong>일인기업 = 한 번 폭주 = 회사 망함.</strong></p>
+
+  <h2>그날 다 중단</h2>
+  <p>대표 = "에이전트 괜히 만들었다 싶어서 = 그날 다 중단."</p>
+  <ul>
+    <li>API key 회수.</li>
+    <li>외부 공유 = 차단.</li>
+    <li>모든 LaunchAgent = <code>.bak</code> (= 새벽 170건 사고도 같이).</li>
+    <li>일주일 동안 = 페르소나 시스템 OFF.</li>
+  </ul>
+  <p>= <strong>공포 = 진짜.</strong></p>
+
+  <h2>극복 = 룰 누적</h2>
+  <p><strong>룰 1)</strong> 자동학습 = AI 호출 X = 파일 흡수만 (= Part 8 28장).</p>
+  <p><strong>룰 2)</strong> 자료 공유 ≠ LLM 호출 (= 페르소나끼리 호출 X) (= Part 8 27장).</p>
+  <p><strong>룰 3)</strong> 공유 시 = 사용자가 자기 토큰 (= 대표 키 X).</p>
+  <p><strong>룰 4)</strong> OAuth Pro $20/월 우선 (= API 정량제 회피).</p>
+  <p><strong>룰 5)</strong> 시나리오·긴 컨텍스트 = 캐싱 활용 (= Anthropic Prompt Caching = 토큰 90% 절감).</p>
+
+  <div class="conclusion">
+    <div class="conclusion__label">한 줄 결론</div>
+    <p>일인기업 = API key 외부 공유 X.<br/>비프로그래머는 API 비용을 모른다. 한 번 폭주 = 회사 망함.</p>
+  </div>
+
+  <div class="follow">
+    <div class="follow__label">★ 따라하기 박스 73</div>
+    <h2 class="follow__title">API 사용량 알람 셋팅</h2>
+<pre><code>Anthropic Console (https://console.anthropic.com):
+1. Settings → Usage limits
+2. Spend limit 박기 (= $50 · $100 · $200)
+3. Alert email 등록
+4. 한도 도달 = 자동 차단
+
+= 폭주 사고 = 자동 차단.</code></pre>
+  </div>
+
+  <div class="follow">
+    <div class="follow__label">★ 따라하기 박스 74</div>
+    <h2 class="follow__title">외부 공유 = 사용자가 자기 토큰</h2>
+<pre><code>// 공유 SaaS 안에 박을 룰:
+
+// ❌ 옛 = 대표 키 박힘 (= 위험)
+const API_KEY = 'sk-ant-...';
+
+// ✓ 새 = 사용자가 자기 키 입력
+function getUserKey() {
+  let key = localStorage.getItem('user_api_key');
+  if (!key) {
+    key = prompt('Anthropic API key 입력');
+    localStorage.setItem('user_api_key', key);
+  }
+  return key;
+}
+
+// 사용자 키 = 사용자가 비용 부담
+const r = await fetch('https://api.anthropic.com/v1/messages', {
+  headers: { 'x-api-key': getUserKey() }
+});</code></pre>
+    <p>→ 외부 사용자 = 자기 키 = 자기 비용. → 대표 = 비용 0.</p>
+  </div>
+
+  <div class="follow">
+    <div class="follow__label">★ 따라하기 박스 75</div>
+    <h2 class="follow__title">Prompt Caching = 토큰 90% 절감</h2>
+<pre><code>import anthropic
+
+client = anthropic.Anthropic()
+
+# 옛 = 매번 풀 컨텍스트
+def query_old(question):
+    return client.messages.create(
+        model="claude-sonnet-4-6",
+        max_tokens=1024,
+        messages=[{
+            "role": "user",
+            "content": f"{LONG_DOCS}\n\n질문: {question}"
+        }]
+    )
+
+# 새 = 캐싱 활용
+def query_new(question):
+    return client.messages.create(
+        model="claude-sonnet-4-6",
+        max_tokens=1024,
+        messages=[{
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": LONG_DOCS,
+                    "cache_control": {"type": "ephemeral"}  # = 캐싱
+                },
+                {
+                    "type": "text",
+                    "text": f"질문: {question}"
+                }
+            ]
+        }]
+    )
+
+# 첫 호출 = 풀 비용
+# 두 번째 이후 = 캐시 적중 = 90% 절감</code></pre>
+    <p>→ 시나리오·문서 = 매번 같은 컨텍스트 = 캐싱 무조건.</p>
+  </div>
+
+  <div class="follow">
+    <div class="follow__label">★ 따라하기 박스 76</div>
+    <h2 class="follow__title">OAuth Pro vs API 정량제</h2>
+<pre><code>대표가 자기 사용 = OAuth Pro
+- claude.ai/code = $20/월 fix
+- 한도: 무제한 messages (= 합리적 범위 안)
+- 절제 = OK = 결제 충격 X
+
+대표 + 외부 공유 = 사용자 자기 키
+- 외부 사용자 = 자기 OAuth 또는 자기 API key
+- 대표 비용 = 0
+
+대표가 외부 워커 운영 = API 정량제 + 알람
+- API key + Usage limit ($100/월 등)
+- 알람 시 = 즉시 차단
+- 캐싱 활용</code></pre>
+  </div>
+
+  <div class="pull">
+    <p>"일인기업 = API key 외부 공유 X."</p>
+  </div>
+
+  <div class="next-chapter">
+    <span class="next-chapter__label">다음 챕터 — 이 책에서</span>
+    <h3>Chapter 30 · DDP 30만원 = 코드 2줄 때문에</h3>
+    <p>인터랙티브 게임 시연 직전 = 한도 차서 = 30만원 결제. 일인기업 가장 위험한 순간.</p>
+    <a class="next-chapter__link" href="ch30.html">→ Ch30 견본 읽기</a>
+  </div>
+</article>
+
+<section class="buy-cta">
+  <div class="buy-cta__label">Part 9 · 돈 — 일인기업 → 중소기업</div>
+  <h2 class="buy-cta__title">API 비용 통제 + 결제 받기<br/>= 진짜 돈</h2>
+  <p class="buy-cta__sub">Part 9 전체 5장 = 띠링띠링·DDP 30만원·패시브 인컴·일인기업 → 중소기업·책 마무리.</p>
+  <p class="buy-cta__sub" style="margin-bottom:0;">2026-06-01 출간 — 종이 ₩22,000 / 전자 ₩14,800.</p>
+</section>
+
+<footer class="foot">© Sunny Ryu · Chapter 29 · 견본 무료 공개</footer>
+
+</body>
+</html>

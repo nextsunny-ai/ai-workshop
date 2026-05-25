@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Workshop · Part 2 · 바이브 코딩 (Vibe Coding)</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="../assets/workshop.css" />
+</head>
+<body>
+
+<div class="stage">
+<div class="deck">
+
+<!-- ─────────────────────────────  01 · COVER ───────────────────────────── -->
+<section class="slide slide--cover slide--active" data-title="Cover">
+  <div class="slide__bar">
+    <div class="slide__bar__brand">
+      <span>AI WORKSHOP · PART 2</span>
+      <span class="slide__bar__rule"></span>
+      <span>Vibe Coding</span>
+    </div>
+    <span class="slide__bar__page">01</span>
+  </div>
+  <div class="slide__cover">
+    <div class="slide__cover__eyebrow">바이브 코딩 입문</div>
+    <h1 class="slide__cover__title">코드를 못 짜도<br/>만들 수 있다</h1>
+    <p class="slide__cover__sub">자연어로 클로드에게 시키면 — 게임·홈페이지·도구·에이전트까지<br/>30장 안에 6가지를 직접 만든다.</p>
+    <div class="slide__cover__meta">
+      <span>Part 1 · AI 활용 기초 (이미 봄) </span>
+      <span class="slide__bar__rule"></span>
+      <span>Part 2 · 바이브 코딩 (지금)</span>
+      <span class="slide__bar__rule"></span>
+      <span>책 · 한 명의 대표가 12명의 AI 에이전트를 만들기까지</span>
+    </div>
+  </div>
+  <div class="slide__foot"><span>Cover</span><span>01</span></div>
+</section>
+
+<!-- ─────────────────────────────  02 · CURRICULUM ─────────────────────── -->
+<section class="slide" data-title="오늘 만드는 것">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Curriculum</span></div>
+    <span class="slide__bar__page">02</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Curriculum</div>
+  <h2 class="slide__title slide__title--mid">오늘 만드는 것 — 6가지</h2>
+  <p class="slide__sub slide__sub--small">한 챕터당 평균 5장 · ★ 실습 마크 = 직접 따라하는 부분.</p>
+  <div class="curri-grid">
+    <div class="curri-card"><span class="curri-card__num">Ch 1</span><h3 class="curri-card__title">첫 HTML 한 장</h3><p>"안녕 세상" 페이지를 1줄 명령으로 만든다.</p></div>
+    <div class="curri-card"><span class="curri-card__num">Ch 2</span><h3 class="curri-card__title">테트리스 게임</h3><p>HTML Canvas 게임. 점수·다음 블록까지.</p></div>
+    <div class="curri-card"><span class="curri-card__num">Ch 3</span><h3 class="curri-card__title">내 홈페이지</h3><p>소개·작업·연락처 한 페이지 사이트.</p></div>
+    <div class="curri-card"><span class="curri-card__num">Ch 4</span><h3 class="curri-card__title">내가 쓰는 도구</h3><p>회의록 받아쓰기 + 자동 정리.</p></div>
+    <div class="curri-card"><span class="curri-card__num">Ch 5</span><h3 class="curri-card__title">AI 에이전트</h3><p>나만의 페르소나 = 12명 시스템 기초.</p></div>
+    <div class="curri-card"><span class="curri-card__num">Ch 6</span><h3 class="curri-card__title">배포 · 도메인</h3><p>GitHub Pages 라이브 + 내 도메인 연결.</p></div>
+  </div>
+  <div class="slide__foot"><span>Curriculum</span><span>02</span></div>
+</section>
+
+<!-- ─────────────────────────────  03 · SECTION INTRO ──────────────────── -->
+<section class="slide slide--section" data-title="§ Ch1 · 첫 HTML 한 장">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Section</span></div>
+    <span class="slide__bar__page">03</span>
+  </div>
+  <div class="slide__section">
+    <div class="slide__section__num">Chapter 1</div>
+    <h2 class="slide__section__title">첫 HTML 한 장</h2>
+    <p class="slide__section__sub">한 줄 명령으로 — 진짜 웹페이지가 만들어진다.</p>
+  </div>
+  <div class="slide__foot"><span>§ Ch1</span><span>03</span></div>
+</section>
+
+<!-- ─────────────────────────────  04 · Ch1.1 · 정의 ───────────────────── -->
+<section class="slide" data-title="바이브 코딩이란?">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Ch 1.1 · 정의</span></div>
+    <span class="slide__bar__page">04</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Ch 1.1 · Definition</div>
+  <h2 class="slide__title slide__title--mid">"바이브 코딩" = 자연어로 코드 만들기</h2>
+  <div class="two-col">
+    <div class="two-col__l">
+      <p class="lead">코드를 직접 타이핑하지 않는다.<br/>대화처럼 시키면 — 클로드가 작성·실행·수정.</p>
+      <ul class="bul">
+        <li><strong>옛 방식</strong> — 책 사서 6개월 공부 → 첫 페이지</li>
+        <li><strong>바이브 코딩</strong> — 한 줄 명령 → 10초 안에 첫 페이지</li>
+        <li><strong>비개발자도 OK</strong> — 영어·코드 몰라도 됨. 한국어로.</li>
+      </ul>
+    </div>
+    <div class="two-col__r">
+      <div class="quote-card">
+        <div class="quote-card__mark">"</div>
+        <p>대표님: "html 한 장 만들어줘"<br/>클로드: <em>(10초 후)</em> "여기 만들었습니다.<br/>브라우저로 열어보세요."</p>
+        <div class="quote-card__src">— 책 Ch15 "첫 HTML 한 장"</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide__foot"><span>Ch 1.1</span><span>04</span></div>
+</section>
+
+<!-- ─────────────────────────────  05 · Ch1.2 · 실습 첫 명령 ────────────── -->
+<section class="slide" data-title="첫 명령 · 실습">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Ch 1.2 · ★ 실습</span></div>
+    <span class="slide__bar__page">05</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Ch 1.2 · ★ 실습</div>
+  <h2 class="slide__title slide__title--mid">★ 실습 — 첫 명령 그대로 따라하기</h2>
+  <p class="slide__sub slide__sub--small">Claude Code (또는 claude.ai) 열고 — 아래 한 줄 그대로 붙여넣기.</p>
+  <div class="prompt">
+    <div class="prompt__head">
+      <span class="prompt__label">PROMPT · 그대로 복사</span>
+      <button class="prompt__copy" data-copy-target="p-ch1">복사</button>
+    </div>
+    <pre class="prompt__body" id="p-ch1">html 한 장 만들어줘.
+내용 = 내 이름 "유희정" + 한 줄 소개 + 사진 자리.
+디자인 = 깔끔하게 + Pretendard 폰트 + 배경 밝게.
+파일 이름 = hello.html 로 저장해줘.</pre>
+  </div>
+  <p class="callout">→ 클로드 = 10~20초 후 = hello.html 생성. 더블클릭으로 브라우저에서 열기.</p>
+  <div class="slide__foot"><span>Ch 1.2</span><span>05</span></div>
+</section>
+
+<!-- ─────────────────────────────  06 · Ch1.3 · 수정·결과 ───────────────── -->
+<section class="slide" data-title="결과 · 수정 한 줄">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Ch 1.3 · 수정</span></div>
+    <span class="slide__bar__page">06</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Ch 1.3 · Iterate</div>
+  <h2 class="slide__title slide__title--mid">맘에 안 들면 — 한 줄 더</h2>
+  <div class="two-col">
+    <div class="two-col__l">
+      <p class="lead">결과 보고 = 바로 다시 시키기.<br/>대화하듯 = 점진적으로 좋아짐.</p>
+      <ul class="bul">
+        <li>"배경을 어두운 회색으로 바꿔줘"</li>
+        <li>"제목을 더 크게 + 가운데 정렬"</li>
+        <li>"섹션 3개로 나눠줘 — 소개·작업·연락처"</li>
+        <li>"모바일에서도 잘 보이게"</li>
+      </ul>
+      <p class="callout callout--soft">★ 핵심: 완벽한 첫 명령 X. 짧은 명령 + 반복.</p>
+    </div>
+    <div class="two-col__r">
+      <div class="quote-card">
+        <div class="quote-card__mark">"</div>
+        <p>"첫 결과가 못나도 = 괜찮아. <br/>다시 시키면 = 더 좋아짐. <br/>30분이면 = 만족할 만한 페이지."</p>
+        <div class="quote-card__src">— 책 Ch15</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide__foot"><span>Ch 1.3</span><span>06</span></div>
+</section>
+
+<!-- ─────────────────────────────  07 · SECTION · Ch2 ──────────────────── -->
+<section class="slide slide--section" data-title="§ Ch2 · 테트리스 만들기">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Section</span></div>
+    <span class="slide__bar__page">07</span>
+  </div>
+  <div class="slide__section">
+    <div class="slide__section__num">Chapter 2</div>
+    <h2 class="slide__section__title">테트리스 게임 만들기</h2>
+    <p class="slide__section__sub">고전 게임 — HTML Canvas · 한 파일 · 30분.</p>
+  </div>
+  <div class="slide__foot"><span>§ Ch2</span><span>07</span></div>
+</section>
+
+<!-- ─────────────────────────────  08 · Ch2.1 · 첫 명령 ──────────────────── -->
+<section class="slide" data-title="테트리스 · 첫 명령">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Ch 2.1 · ★ 실습</span></div>
+    <span class="slide__bar__page">08</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Ch 2.1 · ★ 실습</div>
+  <h2 class="slide__title slide__title--mid">★ 실습 — 테트리스 한 줄로</h2>
+  <div class="prompt">
+    <div class="prompt__head">
+      <span class="prompt__label">PROMPT · 게임 한 줄</span>
+      <button class="prompt__copy" data-copy-target="p-ch2">복사</button>
+    </div>
+    <pre class="prompt__body" id="p-ch2">HTML Canvas로 테트리스 게임 만들어줘.
+파일 1개 = tetris.html 로.
+방향키 = 이동 / 위 = 회전 / 스페이스 = 빠른 낙하.
+디자인 = 다크 톤 + 블록은 7가지 컬러.
+화면 = 게임판 + 오른쪽에 점수 + 다음 블록 미리보기.</pre>
+  </div>
+  <p class="callout">→ 클로드 = 30~60초 = 한 파일 = 바로 작동하는 테트리스. 더블클릭으로 플레이.</p>
+  <div class="slide__foot"><span>Ch 2.1</span><span>08</span></div>
+</section>
+
+<!-- ─────────────────────────────  09 · Ch2.2 · 게임 룰 추가 ────────────── -->
+<section class="slide" data-title="게임 룰 · 점진 추가">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Ch 2.2 · 추가</span></div>
+    <span class="slide__bar__page">09</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Ch 2.2 · Iterate</div>
+  <h2 class="slide__title slide__title--mid">게임감 — 한 줄씩 추가</h2>
+  <div class="three-col">
+    <div class="three-col__item">
+      <div class="three-col__num">01</div>
+      <h3>레벨</h3>
+      <p>"점수 따라 = 속도 빨라지게. 매 1000점 = 1레벨."</p>
+    </div>
+    <div class="three-col__item">
+      <div class="three-col__num">02</div>
+      <h3>홀드</h3>
+      <p>"C 키 = 블록 1개 보관. 한 번에 1개만."</p>
+    </div>
+    <div class="three-col__item">
+      <div class="three-col__num">03</div>
+      <h3>고스트</h3>
+      <p>"블록이 떨어질 자리 = 회색 윤곽으로 미리 표시."</p>
+    </div>
+  </div>
+  <p class="callout callout--soft">★ 한 번에 다 시키지 X — 한 줄씩 + 결과 보고 + 좋으면 다음.</p>
+  <div class="slide__foot"><span>Ch 2.2</span><span>09</span></div>
+</section>
+
+<!-- ─────────────────────────────  10 · Ch2.3 · 사운드 ──────────────────── -->
+<section class="slide" data-title="사운드 + 효과">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Ch 2.3 · 사운드</span></div>
+    <span class="slide__bar__page">10</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Ch 2.3 · Polish</div>
+  <h2 class="slide__title slide__title--mid">사운드 = Web Audio API 한 줄</h2>
+  <div class="two-col">
+    <div class="two-col__l">
+      <p class="lead">파일 없이 = 코드로 직접 사운드 생성.<br/>비프음·드롭음·라인 클리어 = 다 코드로.</p>
+      <div class="prompt prompt--inline">
+        <div class="prompt__head"><span class="prompt__label">한 줄</span><button class="prompt__copy" data-copy-target="p-ch2-sound">복사</button></div>
+        <pre class="prompt__body" id="p-ch2-sound">Web Audio API로 효과음 추가해줘.
+이동 = 짧은 클릭음 / 회전 = 톤 / 라인 클리어 = 멜로디.
+파일 다운로드 X = 코드로만 생성.</pre>
+      </div>
+    </div>
+    <div class="two-col__r">
+      <div class="info-card">
+        <h4>왜 Web Audio API?</h4>
+        <ul class="bul bul--small">
+          <li>외부 파일 X = 한 파일 그대로</li>
+          <li>로드 시간 0 = 즉시 재생</li>
+          <li>비개발자가 듣고 = 톤 조정 가능</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide__foot"><span>Ch 2.3</span><span>10</span></div>
+</section>
+
+<!-- ─────────────────────────────  11 · Ch2.4 · 배포 ──────────────────── -->
+<section class="slide" data-title="배포 · 친구한테 보내기">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Ch 2.4 · 배포</span></div>
+    <span class="slide__bar__page">11</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Ch 2.4 · Share</div>
+  <h2 class="slide__title slide__title--mid">친구한테 링크로 보내기 — 5분</h2>
+  <div class="step-list">
+    <div class="step-list__item"><span class="step-list__num">1</span><div><h4>GitHub 가입</h4><p>github.com — 이메일·비번만 (무료, 1회).</p></div></div>
+    <div class="step-list__item"><span class="step-list__num">2</span><div><h4>새 repo 만들기</h4><p>이름 = <code>my-tetris</code> · Public.</p></div></div>
+    <div class="step-list__item"><span class="step-list__num">3</span><div><h4>tetris.html 업로드</h4><p>"Upload existing file" → 드래그 → Commit.</p></div></div>
+    <div class="step-list__item"><span class="step-list__num">4</span><div><h4>Pages 켜기</h4><p>Settings → Pages → Source: main / root → Save.</p></div></div>
+    <div class="step-list__item"><span class="step-list__num">5</span><div><h4>링크 발급</h4><p>1~2분 후 = <code>https://[내이름].github.io/my-tetris/tetris.html</code> 라이브.</p></div></div>
+  </div>
+  <p class="callout callout--soft">★ 책 Ch16 = 버치사운드 사이트 = 이렇게 V1→V6 만들어 라이브 보냄.</p>
+  <div class="slide__foot"><span>Ch 2.4</span><span>11</span></div>
+</section>
+
+<!-- ─────────────────────────────  12 · SECTION · Ch3 ──────────────────── -->
+<section class="slide slide--section" data-title="§ Ch3 · 홈페이지 만들기">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Section</span></div>
+    <span class="slide__bar__page">12</span>
+  </div>
+  <div class="slide__section">
+    <div class="slide__section__num">Chapter 3</div>
+    <h2 class="slide__section__title">내 홈페이지 만들기</h2>
+    <p class="slide__section__sub">소개·작업·연락처 — 한 페이지. 30분.</p>
+  </div>
+  <div class="slide__foot"><span>§ Ch3</span><span>12</span></div>
+</section>
+
+<!-- ─────────────────────────────  13 · Ch3.1 · 첫 명령 ────────────── -->
+<section class="slide" data-title="홈페이지 · 첫 명령">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Ch 3.1 · ★ 실습</span></div>
+    <span class="slide__bar__page">13</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Ch 3.1 · ★ 실습</div>
+  <h2 class="slide__title slide__title--mid">★ 실습 — 내 홈페이지 한 줄</h2>
+  <div class="prompt">
+    <div class="prompt__head">
+      <span class="prompt__label">PROMPT · 본인 정보 채우기</span>
+      <button class="prompt__copy" data-copy-target="p-ch3">복사</button>
+    </div>
+    <pre class="prompt__body" id="p-ch3">내 한 페이지 홈페이지 만들어줘.
+
+저자 = [내 이름]
+한 줄 소개 = [예: VFX 감독·30년]
+경력 = [3~5줄]
+연락 = [이메일]
+
+디자인 = 미니멀 + Pretendard + 안티 템플릿 (= 다른 사이트랑 안 닮게).
+섹션 = 히어로 / 소개 / 작업 (= 3~5개 카드) / 연락처.
+모바일도 잘 보이게.
+파일 1개 = index.html 로.</pre>
+  </div>
+  <p class="callout">→ 한 번에 = 멋진 한 페이지. 마음에 들 때까지 "이 부분 바꿔줘" 반복.</p>
+  <div class="slide__foot"><span>Ch 3.1</span><span>13</span></div>
+</section>
+
+<!-- ─────────────────────────────  14 · Ch3.2 · 디자인 시스템 ─────────── -->
+<section class="slide" data-title="디자인 시스템 한 줄">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Ch 3.2 · 디자인</span></div>
+    <span class="slide__bar__page">14</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Ch 3.2 · Design System</div>
+  <h2 class="slide__title slide__title--mid">"디자인 한 톤으로" — 한 줄</h2>
+  <div class="two-col">
+    <div class="two-col__l">
+      <p class="lead">전체 사이트 = 한 톤 = "디자인 시스템".<br/>없으면 = 페이지마다 톤 달라짐 = 어수선.</p>
+      <ul class="bul">
+        <li><strong>컬러</strong> — 메인 1 + 보조 1 + 회색 단계</li>
+        <li><strong>폰트</strong> — 제목·본문 = 하나만 (= Pretendard)</li>
+        <li><strong>간격</strong> — 4 / 8 / 16 / 24 / 32 / 48 px</li>
+        <li><strong>모서리</strong> — 0 또는 4 (= 둥글둥글 X)</li>
+      </ul>
+    </div>
+    <div class="two-col__r">
+      <div class="prompt prompt--inline">
+        <div class="prompt__head"><span class="prompt__label">디자인 톤 시키는 법</span><button class="prompt__copy" data-copy-target="p-ch3-design">복사</button></div>
+        <pre class="prompt__body" id="p-ch3-design">디자인 시스템 적용해줘:
+- 컬러 = 메인 #0A0A0E (다크) + 보조 oklch(0.45 0.12 240) (블루)
+- 폰트 = Pretendard
+- 간격 = 8의 배수
+- 모서리 = 0 또는 4px만
+- 그라데이션 / 둥근 카드 / 이모지 = 금지 (안티 템플릿)</pre>
+      </div>
+    </div>
+  </div>
+  <div class="slide__foot"><span>Ch 3.2</span><span>14</span></div>
+</section>
+
+<!-- ─────────────────────────────  15 · Ch3.3 · GitHub Pages 라이브 ──── -->
+<section class="slide" data-title="라이브 — 도메인까지">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Ch 3.3 · 라이브</span></div>
+    <span class="slide__bar__page">15</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Ch 3.3 · Live</div>
+  <h2 class="slide__title slide__title--mid">내 도메인으로 — 추가 30분</h2>
+  <div class="step-list">
+    <div class="step-list__item"><span class="step-list__num">1</span><div><h4>도메인 구입</h4><p>후이즈 / 가비아 — 연간 ₩15,000~20,000 (.com 기준).</p></div></div>
+    <div class="step-list__item"><span class="step-list__num">2</span><div><h4>DNS 설정</h4><p>도메인 관리 → CNAME 추가 → 값 = <code>[내이름].github.io</code></p></div></div>
+    <div class="step-list__item"><span class="step-list__num">3</span><div><h4>GitHub repo</h4><p>Settings → Pages → Custom domain → <code>mysite.com</code> 입력.</p></div></div>
+    <div class="step-list__item"><span class="step-list__num">4</span><div><h4>HTTPS 자동</h4><p>1~24시간 = 인증서 발급 자동 → "Enforce HTTPS" 체크.</p></div></div>
+  </div>
+  <p class="callout callout--soft">★ 책 Ch16·17 = sunnytoon.com 서브도메인 5개 = 이렇게 라이브.</p>
+  <div class="slide__foot"><span>Ch 3.3</span><span>15</span></div>
+</section>
+
+<!-- ─────────────────────────────  16 · SECTION · Ch4 ──────────────────── -->
+<section class="slide slide--section" data-title="§ Ch4 · 내가 쓰는 도구">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Section</span></div>
+    <span class="slide__bar__page">16</span>
+  </div>
+  <div class="slide__section">
+    <div class="slide__section__num">Chapter 4</div>
+    <h2 class="slide__section__title">내가 쓰는 도구 만들기</h2>
+    <p class="slide__section__sub">매일 쓰는 = 회의록·받아쓰기·정리 자동화.</p>
+  </div>
+  <div class="slide__foot"><span>§ Ch4</span><span>16</span></div>
+</section>
+
+<!-- ─────────────────────────────  17 · Ch4.1 · 무엇을 만들지 ─────────── -->
+<section class="slide" data-title="도구 만들기 · 시작">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Ch 4.1 · 시작</span></div>
+    <span class="slide__bar__page">17</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Ch 4.1 · Pick</div>
+  <h2 class="slide__title slide__title--mid">내가 매일 하는 일 = 도구로 만든다</h2>
+  <div class="three-col">
+    <div class="three-col__item">
+      <div class="three-col__num">A</div>
+      <h3>회의록 받아쓰기</h3>
+      <p>마이크 → 자동 글 → 요약. 무료 SaaS 비용 0.</p>
+    </div>
+    <div class="three-col__item">
+      <div class="three-col__num">B</div>
+      <h3>이미지 한 번에</h3>
+      <p>30장 사진 → 자르기·리사이즈·이름 바꾸기.</p>
+    </div>
+    <div class="three-col__item">
+      <div class="three-col__num">C</div>
+      <h3>스크립트 정리</h3>
+      <p>긴 글 → 챕터별 요약 + 핵심 인용 추출.</p>
+    </div>
+  </div>
+  <p class="callout callout--soft">★ 책 Ch22·23·24 = AI 프로노트·스토리메이커·비주얼메이커 = 다 이렇게 시작.</p>
+  <div class="slide__foot"><span>Ch 4.1</span><span>17</span></div>
+</section>
+
+<!-- ─────────────────────────────  18 · Ch4.2 · 회의록 실습 ────────────── -->
+<section class="slide" data-title="회의록 도구 · 실습">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Ch 4.2 · ★ 실습</span></div>
+    <span class="slide__bar__page">18</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Ch 4.2 · ★ 실습</div>
+  <h2 class="slide__title slide__title--mid">★ 실습 — 회의록 받아쓰기 도구</h2>
+  <div class="prompt">
+    <div class="prompt__head">
+      <span class="prompt__label">PROMPT · 첫 도구</span>
+      <button class="prompt__copy" data-copy-target="p-ch4">복사</button>
+    </div>
+    <pre class="prompt__body" id="p-ch4">회의록 받아쓰기 도구 만들어줘.
+
+기능:
+1. 마이크 켜기 버튼 = Web Speech API로 한국어 받아쓰기 시작
+2. 받아쓴 글 = 실시간으로 화면에 표시
+3. 끝내기 버튼 = 받아쓰기 멈춤
+4. 저장 = .txt 파일로 다운로드
+5. 요약 = "요약" 버튼 → 클로드 API 호출 (= API 키 입력란)
+
+기술 = HTML + JS 한 파일. 외부 라이브러리 X.
+디자인 = 깔끔 + Pretendard.</pre>
+  </div>
+  <p class="callout">→ 약 1~2분 후 = 작동하는 도구 1개. 내 회의용 = 내가 만든 = 비용 0.</p>
+  <div class="slide__foot"><span>Ch 4.2</span><span>18</span></div>
+</section>
+
+<!-- ─────────────────────────────  19 · Ch4.3 · 도구 = SaaS로 ─────────── -->
+<section class="slide" data-title="도구 → 작은 SaaS로">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Ch 4.3 · 확장</span></div>
+    <span class="slide__bar__page">19</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Ch 4.3 · Scale</div>
+  <h2 class="slide__title slide__title--mid">내 도구 = 다른 사람도 쓸 수 있게</h2>
+  <div class="two-col">
+    <div class="two-col__l">
+      <p class="lead">완성된 도구 = GitHub Pages 라이브 = 링크로 공유.<br/>친구·동료·고객도 같은 도구 = 비용 0 (= BYOK).</p>
+      <ul class="bul">
+        <li><strong>BYOK (Bring Your Own Key)</strong> — 사용자 본인 API 키 입력 = 내 비용 0</li>
+        <li><strong>localStorage 저장</strong> — 키 = 브라우저에만 박힘 = 안전</li>
+        <li><strong>Stripe·토스</strong> — 유료 전환 시 = 결제 추가</li>
+      </ul>
+    </div>
+    <div class="two-col__r">
+      <div class="quote-card">
+        <div class="quote-card__mark">"</div>
+        <p>"내 회의록 도구 = 친구 5명이 쓴다. <br/>나는 = 비용 X = 친구들이 본인 키 박음. <br/>이게 패시브 인컴 시드."</p>
+        <div class="quote-card__src">— 책 Ch31 패시브 인컴</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide__foot"><span>Ch 4.3</span><span>19</span></div>
+</section>
+
+<!-- ─────────────────────────────  20 · SECTION · Ch5 ──────────────────── -->
+<section class="slide slide--section" data-title="§ Ch5 · 에이전트 만들기">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Section</span></div>
+    <span class="slide__bar__page">20</span>
+  </div>
+  <div class="slide__section">
+    <div class="slide__section__num">Chapter 5</div>
+    <h2 class="slide__section__title">AI 에이전트 만들기</h2>
+    <p class="slide__section__sub">"세라야" 부르면 답하는 — 내 회사 팀장 만들기.</p>
+  </div>
+  <div class="slide__foot"><span>§ Ch5</span><span>20</span></div>
+</section>
+
+<!-- ─────────────────────────────  21 · Ch5.1 · 에이전트란 ────────────── -->
+<section class="slide" data-title="에이전트 = 분야별 전문가">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Ch 5.1 · 정의</span></div>
+    <span class="slide__bar__page">21</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Ch 5.1 · Persona</div>
+  <h2 class="slide__title slide__title--mid">에이전트 = SKILL.md 파일 1개</h2>
+  <div class="two-col">
+    <div class="two-col__l">
+      <p class="lead">사람 = X. 그냥 .md 파일에 = "너는 OO이다" 박힘.<br/>호출하면 = 그 톤·지식으로 답함.</p>
+      <ul class="bul">
+        <li><strong>이름</strong> — 세라·리안·테오 등 (= 부르기 쉬운)</li>
+        <li><strong>역할</strong> — "회사 팀장" / "디자이너" / "개발자"</li>
+        <li><strong>지식</strong> — 회사 자료 read 권한</li>
+        <li><strong>학습</strong> — learnings.md = 누적 (= 같은 실수 X)</li>
+      </ul>
+    </div>
+    <div class="two-col__r">
+      <div class="info-card">
+        <h4>책 12명 페르소나</h4>
+        <ul class="bul bul--small">
+          <li><strong>지니</strong> — 비서·라우터</li>
+          <li><strong>세라·네아·모리·버치</strong> — 4사 팀장</li>
+          <li><strong>리안·테오·소리</strong> — 디자인·개발·시나리오</li>
+          <li><strong>마루·하나·루미·카이</strong> — 마케팅·회계·콘텐츠·게임</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide__foot"><span>Ch 5.1</span><span>21</span></div>
+</section>
+
+<!-- ─────────────────────────────  22 · Ch5.2 · SKILL.md 실습 ─────────── -->
+<section class="slide" data-title="SKILL.md · 실습">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Ch 5.2 · ★ 실습</span></div>
+    <span class="slide__bar__page">22</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Ch 5.2 · ★ 실습</div>
+  <h2 class="slide__title slide__title--mid">★ 실습 — 첫 페르소나 박기</h2>
+  <div class="prompt">
+    <div class="prompt__head">
+      <span class="prompt__label">PROMPT · "세라야"</span>
+      <button class="prompt__copy" data-copy-target="p-ch5">복사</button>
+    </div>
+    <pre class="prompt__body" id="p-ch5">~/.claude/agents/ 폴더에 sera.md 파일 만들어줘.
+
+내용:
+---
+name: 세라
+description: "써니엔터테인먼트 팀장. 영화·VFX 프로젝트 매니저."
+---
+
+# 세라 — 써니엔터 팀장
+
+## 역할
+- 영화 프로젝트 진행 추적
+- KOFIC·KOCCA 지원사업 안내
+- 시나리오 검수
+
+## 호출 방법
+"세라야" 또는 "@세라"로 호출.
+
+## 학습 누적
+~/.claude/agents/sera_learnings.md 에 매 세션 끝 = 새 사고·해결 박힘.</pre>
+  </div>
+  <p class="callout">→ 다음부터 = "세라야, 이번 달 영화 진행 상황 정리해줘" = 세라 톤으로 답함.</p>
+  <div class="slide__foot"><span>Ch 5.2</span><span>22</span></div>
+</section>
+
+<!-- ─────────────────────────────  23 · Ch5.3 · 학습 누적 ──────────────── -->
+<section class="slide" data-title="학습 누적 — 같은 실수 X">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Ch 5.3 · 학습</span></div>
+    <span class="slide__bar__page">23</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Ch 5.3 · Learn</div>
+  <h2 class="slide__title slide__title--mid">"이거 다시 하지 마" — learnings.md</h2>
+  <div class="two-col">
+    <div class="two-col__l">
+      <p class="lead">매 세션 = 새 실수·새 발견 = learnings.md에 누적.<br/>다음 세션 = 자동 read = 같은 실수 X.</p>
+      <ul class="bul">
+        <li><strong>거절된 시도</strong> — "이렇게 하지 마"</li>
+        <li><strong>채택된 패턴</strong> — "이거 좋아"</li>
+        <li><strong>특이 룰</strong> — 도메인별 / 사람별 / 회사별</li>
+      </ul>
+      <p class="callout callout--soft">★ 책 Ch14 = "같은 실수 두 번 = 룰로 박는다" — 진짜 효과.</p>
+    </div>
+    <div class="two-col__r">
+      <div class="prompt prompt--inline">
+        <div class="prompt__head"><span class="prompt__label">learnings.md 형식</span><button class="prompt__copy" data-copy-target="p-ch5-learn">복사</button></div>
+        <pre class="prompt__body" id="p-ch5-learn"># 세라 학습 누적
+
+## 거절된 시도
+- [2026-05-15] PPT 디자인에 그라데이션 박지 X — 대표님 "안티 템플릿".
+- [2026-05-22] 회의록 = footer에 광고 카피 박지 X.
+
+## 채택된 패턴
+- [2026-05-10] 영화 IR = 30년 CD 톤 + Pretendard.
+- [2026-05-18] 지원사업 안내 = 마감일 빨간색 강조.</pre>
+      </div>
+    </div>
+  </div>
+  <div class="slide__foot"><span>Ch 5.3</span><span>23</span></div>
+</section>
+
+<!-- ─────────────────────────────  24 · Ch5.4 · 12명 시스템 ─────────── -->
+<section class="slide" data-title="12명 = 한 회사 시스템">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Ch 5.4 · 시스템</span></div>
+    <span class="slide__bar__page">24</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Ch 5.4 · System</div>
+  <h2 class="slide__title slide__title--mid">1명 → 12명 — 한 달 안에</h2>
+  <div class="three-col">
+    <div class="three-col__item">
+      <div class="three-col__num">Week 1</div>
+      <h3>1~3명</h3>
+      <p>회사 팀장 1명 + 디자이너 1명 + 개발자 1명. 가장 자주 부르는 역할부터.</p>
+    </div>
+    <div class="three-col__item">
+      <div class="three-col__num">Week 2</div>
+      <h3>4~7명</h3>
+      <p>마케팅·회계·시나리오·콘텐츠. learnings 누적 시작.</p>
+    </div>
+    <div class="three-col__item">
+      <div class="three-col__num">Week 3~4</div>
+      <h3>8~12명</h3>
+      <p>비서(라우터) + 특수 역할. 한 회사 = 한 사람이 운영하는 진짜 팀.</p>
+    </div>
+  </div>
+  <p class="callout">★ 책 33장 = 이 한 달의 실제 기록 = "한 명의 대표가 12명의 AI 에이전트를 만들기까지".</p>
+  <div class="slide__foot"><span>Ch 5.4</span><span>24</span></div>
+</section>
+
+<!-- ─────────────────────────────  25 · SECTION · Ch6 ──────────────────── -->
+<section class="slide slide--section" data-title="§ Ch6 · 배포 · 도메인">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Section</span></div>
+    <span class="slide__bar__page">25</span>
+  </div>
+  <div class="slide__section">
+    <div class="slide__section__num">Chapter 6</div>
+    <h2 class="slide__section__title">배포 · 도메인 · .exe 까지</h2>
+    <p class="slide__section__sub">만든 것을 → 진짜 세상에 내보내는 법.</p>
+  </div>
+  <div class="slide__foot"><span>§ Ch6</span><span>25</span></div>
+</section>
+
+<!-- ─────────────────────────────  26 · Ch6.1 · GitHub Pages ──────────── -->
+<section class="slide" data-title="GitHub Pages — 무료 호스팅">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Ch 6.1 · Pages</span></div>
+    <span class="slide__bar__page">26</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Ch 6.1 · Free Hosting</div>
+  <h2 class="slide__title slide__title--mid">GitHub Pages — 평생 무료</h2>
+  <div class="two-col">
+    <div class="two-col__l">
+      <ul class="bul">
+        <li><strong>비용</strong> — ₩0 / 평생</li>
+        <li><strong>속도</strong> — CDN 자동 = 빠름</li>
+        <li><strong>HTTPS</strong> — 자동 발급</li>
+        <li><strong>도메인</strong> — 커스텀 도메인 연결 가능</li>
+        <li><strong>제한</strong> — 정적 페이지만 (= 서버 X) / 100GB·월</li>
+      </ul>
+    </div>
+    <div class="two-col__r">
+      <div class="info-card">
+        <h4>대안 3개 (= 동적 사이트용)</h4>
+        <ul class="bul bul--small">
+          <li><strong>Vercel</strong> — Next.js·React 자동. 무료 hobby.</li>
+          <li><strong>Netlify</strong> — 정적+서버리스. 무료 starter.</li>
+          <li><strong>Cloudflare Pages</strong> — 빠름·무료. Workers 연계.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide__foot"><span>Ch 6.1</span><span>26</span></div>
+</section>
+
+<!-- ─────────────────────────────  27 · Ch6.2 · 도메인 ─────────── -->
+<section class="slide" data-title="도메인 — 내 이름 박힌 URL">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Ch 6.2 · Domain</span></div>
+    <span class="slide__bar__page">27</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Ch 6.2 · Custom Domain</div>
+  <h2 class="slide__title slide__title--mid">도메인 = 연 ₩15,000~20,000</h2>
+  <div class="step-list">
+    <div class="step-list__item"><span class="step-list__num">1</span><div><h4>도메인 등록</h4><p>후이즈 / 가비아 / Namecheap — 이름 검색 → 결제 (.com 약 ₩15,000/년).</p></div></div>
+    <div class="step-list__item"><span class="step-list__num">2</span><div><h4>DNS 레코드</h4><p>관리 화면 → A 또는 CNAME → GitHub Pages 값 입력.</p></div></div>
+    <div class="step-list__item"><span class="step-list__num">3</span><div><h4>repo Settings → Pages</h4><p>Custom domain 입력 → Enforce HTTPS 체크.</p></div></div>
+    <div class="step-list__item"><span class="step-list__num">4</span><div><h4>전파 대기</h4><p>5분 ~ 24시간 = 인증서 자동 발급 + HTTPS 작동.</p></div></div>
+  </div>
+  <p class="callout callout--soft">★ 책 부록 C = sunnytoon.com 서브도메인 5개 (agent·home·visual·comfy·story) = 다 이렇게.</p>
+  <div class="slide__foot"><span>Ch 6.2</span><span>27</span></div>
+</section>
+
+<!-- ─────────────────────────────  28 · Ch6.3 · Tauri .exe ─────────── -->
+<section class="slide" data-title="Tauri — 내 도구를 .exe로">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Ch 6.3 · Desktop</span></div>
+    <span class="slide__bar__page">28</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Ch 6.3 · .exe</div>
+  <h2 class="slide__title slide__title--mid">Tauri — HTML 도구를 데스크탑 앱으로</h2>
+  <div class="two-col">
+    <div class="two-col__l">
+      <p class="lead">웹페이지 X — 진짜 설치되는 .exe / .dmg / .app.<br/>코드는 같은 HTML + 약간의 Rust = 자동 변환.</p>
+      <ul class="bul">
+        <li><strong>크기</strong> — 5~15MB (= Electron 100MB 대비 작음)</li>
+        <li><strong>속도</strong> — 네이티브 (= Rust 백엔드)</li>
+        <li><strong>플랫폼</strong> — Windows / macOS / Linux 자동</li>
+        <li><strong>비용</strong> — 0 (= 오픈소스)</li>
+      </ul>
+    </div>
+    <div class="two-col__r">
+      <div class="prompt prompt--inline">
+        <div class="prompt__head"><span class="prompt__label">한 줄</span><button class="prompt__copy" data-copy-target="p-ch6-tauri">복사</button></div>
+        <pre class="prompt__body" id="p-ch6-tauri">내 회의록 도구 HTML을 Tauri로 데스크탑 앱 변환해줘.
+타깃 = Windows .exe + macOS .dmg.
+아이콘·이름·버전 = 내가 입력한 값으로.
+빌드 명령까지 안내해줘.</pre>
+      </div>
+    </div>
+  </div>
+  <p class="callout callout--soft">★ 책 Ch31 = "Agent Pro 1.0" = 이렇게 만든 .exe 풀스택.</p>
+  <div class="slide__foot"><span>Ch 6.3</span><span>28</span></div>
+</section>
+
+<!-- ─────────────────────────────  29 · OUTRO · 정리 ─────────── -->
+<section class="slide slide--section" data-title="Outro · 정리">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Outro</span></div>
+    <span class="slide__bar__page">29</span>
+  </div>
+  <div class="slide__section">
+    <div class="slide__section__num">Outro</div>
+    <h2 class="slide__section__title">오늘 만든 것 — 6가지</h2>
+    <p class="slide__section__sub">HTML / 게임 / 홈페이지 / 도구 / 에이전트 / 배포 — 다 자기 손으로.</p>
+  </div>
+  <div class="slide__foot"><span>Outro</span><span>29</span></div>
+</section>
+
+<!-- ─────────────────────────────  30 · 마무리 ─────────── -->
+<section class="slide" data-title="이제 너의 차례">
+  <div class="slide__bar">
+    <div class="slide__bar__brand"><span>AI WORKSHOP · PART 2</span><span class="slide__bar__rule"></span><span>Closing</span></div>
+    <span class="slide__bar__page">30</span>
+  </div>
+  <div class="slide__index"><span class="dot"></span>Your Turn</div>
+  <h2 class="slide__title">이제 너의 차례</h2>
+  <p class="lead">강의·책 = 끝났다.<br/>지금 = Claude Code 열고 = 한 줄 시키기.</p>
+  <div class="closing-grid">
+    <div class="closing-card">
+      <h4>다음 한 줄</h4>
+      <p>"html 한 장 만들어줘 — 내 이름 박힌 페이지."</p>
+    </div>
+    <div class="closing-card">
+      <h4>그 다음 한 줄</h4>
+      <p>"이거 GitHub Pages로 라이브 만들어줘."</p>
+    </div>
+    <div class="closing-card">
+      <h4>1주일 후</h4>
+      <p>"내가 매일 하는 일 1개 = 도구로 만들어줘."</p>
+    </div>
+    <div class="closing-card">
+      <h4>1달 후</h4>
+      <p>"내 회사 = 12명 페르소나 = SKILL.md 다 박아줘."</p>
+    </div>
+  </div>
+  <p class="callout">★ 책 = "한 명의 대표가 12명의 AI 에이전트를 만들기까지" — 한 달의 실제 기록 풀스토리.</p>
+  <div class="slide__foot"><span>Closing</span><span>30</span></div>
+</section>
+
+</div><!-- .deck -->
+</div><!-- .stage -->
+
+<div class="controls">
+  <button class="ctrl-btn" id="btn-index" title="목차 (I)">목차</button>
+  <button class="ctrl-btn" id="btn-prev" title="이전 (←)">이전</button>
+  <button class="ctrl-btn" id="btn-next" title="다음 (→ / space)">다음</button>
+  <span class="ctrl-counter" id="counter">01 / 30</span>
+</div>
+
+<div class="index-overlay" id="index-overlay">
+  <button class="index-overlay__close" id="index-close">닫기 · Esc</button>
+  <div class="index-overlay__inner">
+    <div class="index-overlay__title">전체 슬라이드 — 클릭하면 해당 페이지로 이동</div>
+    <div class="index-overlay__list" id="index-list"></div>
+  </div>
+</div>
+
+<script src="../assets/workshop.js"></script>
+</body>
+</html>
